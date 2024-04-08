@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rating-based Movie Recommendations</title>
+    <link rel="stylesheet" href="{{url_for( 'static',filename='css/style.css')}}">
+</head>
+
+<body style="background-color: dimgray;">
+    <div style="width: auto" class="container">
+        <h1>Recommendation Based On Rating</h1>
+        <img style=" right: 2rem; width: 80%;" src="{{url_for( 'static',filename='images/star_1.avif')}}" alt="">
+
+        <br><br>
+        <label for="rating">Select rating range:</label>
+        <select id="rating">
+            <option value="1+">1+</option>
+            <option value="3+">3+</option>
+            <option value="5+">5+</option>
+            <option value="7+">7+</option>
+            <option value="8+">8+</option>
+            <option value="9+">9+</option>
+           
+        </select>
+        <label for="genre">Select genre:</label>
+        <select id="genre">
+            <option value="action">Action</option>
+            <option value="comedy">Comedy</option>
+            <option value="drama">Drama</option>
+            <option value="horror">Horror</option>
+            <option value="sci-fi">Sci-Fi</option>
+        </select>
+        <label for="language">Select Language:</Select></label>
+        <select name="" id="language">
+            <option value="english">English</option>
+            <option value="hindi">Hindi</option>
+            <option value="spanish">Spanish</option>
+            <option value="japanese">Japanese</option>
+            <option value="korean">Korean</option>
+            <option value="german">German</option>
+            <option value="french">French</option>
+        </select>
+        <label for="">No. of Recommendations</label>
+        <div class="slidecontainer">
+            <input type="range" min="1" max="25" value="50" class="slider" id="myRange">
+            <p style="color: white;">Value: <span id="demo"></span></p>
+        </div>
+
+        <button style="position: relative; left: 18rem; " onclick="getRatingRecommendations()">Get Recommendations</button>
+        <div id="ratingbase-recommendations" style="display: none;"></div>
+    </div>
+
+    <script src="{{url_for( 'static',filename='js/script.js')}}"></script>
+    <script src="{{url_for( 'static',filename='js/rating_recommendations.js')}}"></script>
+</body>
+
+</html>

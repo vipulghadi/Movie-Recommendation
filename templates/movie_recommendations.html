@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title style="color: white;">Recommendation based on Series</title>
+    <link rel="stylesheet" href="{{url_for( 'static',filename='css/style.css')}}">
+
+</head>
+
+<body style="background-color: dimgray;">
+    <div style="width: 800px;" class="container">
+        <h1>Recommendation Based On Series</h1>
+        <img style="margin-bottom: 1rem;width:100%;" src="{{url_for( 'static',filename='images/college.img')}}" alt="">
+        <h3>Search by Names</h3>
+        <input type="text" id="searchInput" placeholder="Search for a series..." style="width: 100%;padding:10px;font-size: 15px;">
+        <div id="suggestions" style="display: none;"></div>
+        <div class="slidecontainer">
+            <input type="range" min="1" max="25" value="1" class="slider" id="myRange">
+            <p style="color: white;">Number of Results you want: <span id="demo"></span></p>
+        </div>
+
+        <button style="position: relative; left: 21rem;" onclick="getMovieRecommendations()">Get Recommendations</button>
+        <div id="recommendationss" style="display: none;">
+
+
+
+        </div>
+
+
+</body>
+<script src="{{url_for( 'static',filename='js/script.js')}}"></script>
+<script src="{{url_for( 'static',filename='js/movie_recommendations.js')}}"></script>
+
+</html>
